@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div  class=" d-flex justify-content-center flex-column align-items-center mt-5" >
+    <h1>welcome to my secret coding quiz</h1>
+
+    </div>
+    <div class="overlay"></div>
+    <div class="scanline"></div>
+    <div class="wrapper">
+      <div class="content clearfix">
+    
+        <header class="site clearfix">
+          <div class="col one">
+            <img src="./logo192.png" alt="591 Systems" width="740" height="729" id="logo-v" />
+          </div>
+          <div class="col two">
+            <h4>Sam-dejesus Systems (tm) <br /> <b>C</b>affeinated  <b>O</b>ptimist <b>D</b>eciphering <b>E</b>nigmas  (C.O.D.E)</h4>
+            <p>----------------------------------------</p>
+            <p>C.O.D.E v 2.0.1</p>
+            <p>(c)2023 Sam-dejesus Systems</p>
+            <p>- Server 3002 -</p>
+          </div>
+        </header>
+    
+        <nav class="site clear">
+          <ul>
+            <li><a href="#" title="">Secret Message</a></li>
+            <li><a href="#" title="">Score Board</a></li>
+            <li><a href="#" title="">Contact Us</a></li>
+          </ul>
+        </nav>
+      <div class="loadingDiv">
+
+        
+        <p>System Administrator has been notified-Sam-dejesus</p>
+        <div class="allDone hide"> LOADING COMPLETE</div>
+        <div class="loading">
+          C.O.D.E . . . Loading(<span id="alpha"></span><span>%</span>)
+
+      </div>
+
+
+       </div>
+        <p class="clear"><br /></p>
+        <div id="start" class="hide">
+          <p>Welcome to the Bootcamp Coding Quiz. with this advance training application you will be able to test your Coding knowledge.
+          every wrong answer will have time deducted from your timer. If the timer reaches 0 you lose if you get to the 
+          end you will receive your score which you can save. Good luck</p><br />
+          <h1>Select Difficulty Level</h1>
+          <form id="difficultyForm">
+            <div class="border d-flex flex-row">
+              <input class="levelSelector" type="radio" id="easy" name="difficulty" value="easy">
+              <label for="easy">Easy</label><br>              
+            </div>
+
+              <div class="border d-flex flex-row">
+               <input class="levelSelector" type="radio" id="medium" name="difficulty" value="medium"> <br>
+              <label for="medium">Medium</label><br>               
+              </div>
+
+              <div class="border d-flex flex-row">
+              <input class="levelSelector" type="radio" id="hard" name="difficulty" value="hard"><br>
+              <label for="hard">Hard</label><br>                
+              </div>
+
+
+
+          </form>
+      
+          <input type="submit" value="Submit"  id="startGame"/>
+        </div>
+
+
+      </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
