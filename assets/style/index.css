@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
+:root{
+	--primary-color: #00dd00;
+	--hover-color: #00bb00;
+	--primary-font:'VT323',Courier;
+}
+
 @keyframes scroll {
 	0% { height: 0 }
 	100% { height: 100%; }
@@ -59,10 +65,10 @@
 html,
 body {
 	background: #383838;
-	color: #00dd00;
+	color: var(--primary-color);
 	font-size: 64.5%;
 	font-size: 1.4em;
-	font-family: 'VT323', Courier;
+	font-family: var(--primary-font);
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -82,7 +88,7 @@ a {
 }
 
 a:hover {
-	color: #00dd00;
+	color: var(--primary-color);
 }
 
 p { 
@@ -98,13 +104,13 @@ ul {
 
 ul a:before,
 p a:before {
-	color: #00dd00;
+	color: var(--primary-color);
 	content: ' [ ';
 }
 
 ul a:after,
 p a:after {
-	color: #00dd00;
+	color: var(--primary-color);
 	content: ' ] ';	
 }
 
@@ -114,8 +120,8 @@ header.site {
 }
 
 nav.site { 
-	margin: 0 0 40px 0;
-  position: relative;
+  margin: 0 0 40px 0;
+  position: relative; /* adds flicker to a if removed*/
   width: 100%;
   z-index: 10;
 }
@@ -125,7 +131,7 @@ nav.site ul {
 }
 
 nav.site ul li {
-	display: inline-block;
+  display: inline-block;
   padding: 0 10px;
   min-width: 250px;
   width: auto;
@@ -220,10 +226,10 @@ input[type=text],
 textarea {
 	background: transparent;
 	border: none;
-	color: #00dd00;
+	color: var(--primary-color);
 	display: block;
 	float: left;
-	font-family: 'VT323', Courier;
+	font-family: var(--primary-font);
 	font-size: 1.2em;
 	position: relative;
 	width: 80%;
@@ -246,12 +252,12 @@ a.button:focus {
 input[type=submit],
 a.button {
 	background: transparent;
-	border: 1px solid #00dd00;
+	border: 1px solid var(--primary-color);
 	clear: both;
-	color: #00dd00;
+	color: var(--primary-color);
 	cursor: hand;
 	display: inline-block;
-	font-family: 'VT323', Courier;
+	font-family: var(--primary-font);
 	font-size: 1em;
 	margin-bottom: 20px;
 	opacity: 0.25;
@@ -264,7 +270,7 @@ a.button {
 
 input[type=submit]:hover,
 a.button:hover {
-	background: #00dd00;
+	background: var(--primary-color);
 	color: #383838;
 	opacity: 0.8;
 }
@@ -310,4 +316,89 @@ a.button:hover {
 	margin: 10px;
 	height: 30px;
 	width: 30px;
+	-webkit-appearance: none; 
+	appearance: none;
+	border: 2px solid var(--primary-color); 
+	border-radius: 50%; 
+	outline: none; 
+	cursor: pointer;
+}
+.levelSelector:checked {
+
+	background-color: var(--primary-color); 
+	border-color: var(--primary-color); 
+  }
+
+.levelSelector:checked:hover{
+	background-color: var(--hover-color);
+}
+.choices{
+	flex-wrap: wrap;
+
+}
+.choice{
+
+	background: transparent;
+	border: 1px solid var(--primary-color);
+	clear: both;
+	color: var(--primary-color);
+	cursor: hand;
+	display: inline-block;
+	font-family: var(--primary-font);
+	font-size: 1em;
+	margin: 10px;
+	opacity: 0.25;
+
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	z-index: 10;
+}
+
+.choice:hover{
+	background: var(--primary-color);
+	color: #383838;
+	opacity: 0.8;
+}
+.score-options{
+
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.score-options a{
+	position: relative;
+	z-index: 10;
+}
+.score-title{
+width: 100%;
+
+display: flex;
+justify-content: center;
+}
+.score-board{
+	width: 100%;
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.post{
+	display: flex;
+	justify-content: center;
+	border:4px solid var(--primary-color);
+margin-bottom: 10px;
+	width: 100%;
+}
+
+.score-options a:before,
+.score-options a:before {
+	color: var(--primary-color);
+	content: ' [ ';
+}
+
+.score-options a:after,
+.score-options a:after {
+	color: var(--primary-color);
+	content: ' ] ';	
 }

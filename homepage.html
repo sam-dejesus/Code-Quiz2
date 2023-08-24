@@ -11,13 +11,16 @@
   <link rel="stylesheet" href="./assets/style/index.css">
 </head>
 <body>
-  <main id="main">
-    <div  class=" d-flex justify-content-center flex-column align-items-center mt-5" >
-    <h1>welcome to my secret coding quiz</h1>
-
-    </div>
+  <main >
     <div class="overlay"></div>
     <div class="scanline"></div>
+    
+    <div id="mainDiv">
+
+    <div  class=" d-flex justify-content-start flex-column align-items-start px-3 mt-5 " >
+    <h1>welcome to my secret coding quiz</h1>
+    </div>
+
     <div class="wrapper">
       <div class="content clearfix">
     
@@ -37,7 +40,7 @@
         <nav class="site clear">
           <ul>
             <li><a href="#" title="">Secret Message</a></li>
-            <li><a href="#" title="">S.C.O.R.E Board</a></li>
+            <li><a href="./pages/score-board.html" title="">S.C.O.R.E Board</a></li>
             <li><a href="#" title="">Contact Us</a></li>
           </ul>
         </nav>
@@ -54,7 +57,8 @@
 
        </div>
         <p class="clear"><br /></p>
-        <div id="start" class="hide">
+       
+        <div id="start" class="hide">  
           <p>Welcome to the Bootcamp Coding Quiz. with this advance training application you will be able to test your Coding knowledge.
           every wrong answer will have time deducted from your timer. If the timer reaches 0 you lose if you get to the 
           end you will receive your score which you can save. Good luck</p><br />
@@ -85,13 +89,25 @@
 
       </div>
     </div>
-  </main>
+  </div>
+
   <div id="questions" class="hide">
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer">Time: <span id="time"></span></div>
     <h2 id="question-title"></h2>
     <div id="choices" class="choices"></div>
   </div>
 
+  <div class="end hide" id="end">
+    <h2 id="end-title"></h2>
+    <p id="score-display"></p>
+    <form>
+      <label>Name >></label><input type="text" id="userName" /><br />
+    </form>
+    <input type="submit" value="Save" id="save"></input>
+    <input type="submit" value="Restart" id="restart"></input>
+    <h2 class="hide" id="savedPrompt">your score has been saved</h2>
+  </div>
+  </main>
     <script src="./assets/js/index.js"></script>
 </body>
 </html>
