@@ -7,14 +7,19 @@ let loading = $(".loading");
 let alpha = $("#alpha");
 const start = $("#start");
 const startGame = $("#startGame");
-var timerEl = $("#time");
+let timerEl = $("#time");
 const endTitle = $("#end-title");
 const end = $("#end");
 const restart = $("#restart");
 const save = $("#save");
 const scoreDisplay = $("#score-display");
-var userName = $("#userName");
+let userName = $("#userName");
 const savedPrompt = $("#savedPrompt");
+const reset = $('#reset')
+const resetDiv = $('#resetDiv')
+const resetText = $('#resetText')
+const resetBtn = $('#resetBtn')
+
 //
 var questions = [
   {
@@ -127,19 +132,26 @@ var questions = [
       "<script scr = script.js><script>",
       "<script src= script.js script>",
     ],
-    answer: "<script src= script.js script>",
+    answer: "<script scr = script.js><script>",
   },
 ];
 
 //
 let existingData = JSON.parse(localStorage.getItem("QuizData")) || [];
-
-
-
 var selectedQuestions;
 var currentQuestionIndex = 0;
 let alphaCount = 0;
 let saveClicked = false;
+//
+
+let achievementData = JSON.parse(localStorage.getItem("achievements")) || {
+  pointsAlpha: false,
+  pointsBeta: false,
+  pointsOmega: false,
+  twentyGames: 0,
+};
+
+
 
 //sound effects
 var backgroundMusic = new Audio('assets/sfx/computer-startup-6331.mp3')
@@ -281,9 +293,26 @@ function quizEnd(timesUp) {
   } else {
     endTitle.text("quiz completed");
   }
+
+  if (result >= 5) {
+    achievementData.pointsAlpha = true;
+  }
+  if (result >= 10) {
+    achievementData.pointsBeta = true;
+  }
+  if (result === 15) {
+    achievementData.pointsOmega = true;
+  }
+  achievementData.twentyGames++;
+  
+
   const score = result.toString();
   scoreDisplay.text("Final score: " + score);
+
+  localStorage.setItem("achievements", JSON.stringify(achievementData));
+
 }
+
 save.click(() => {
   const score = result;
   if (saveClicked) {
@@ -296,6 +325,7 @@ save.click(() => {
     return null;
   } else {
     savedPrompt.removeClass("hide");
+
     existingData.push({
       userName: userName.val(),
       score: score
@@ -309,6 +339,22 @@ restart.click(() => {
   location.reload();
 });
 
+reset.click(()=>{
+resetDiv.removeClass('hide')
+reset.addClass('hide')
+})
+resetBtn.click(()=>{
+
+
+  if(resetText.val()=== "assembly"){
+    localStorage.removeItem("QuizData");
+    resetDiv.addClass('hide');
+    location.reload()
+
+  } else{
+    alert("ERROR")
+  }
+})
 
 let scoreBoard = $('#score-board');
 existingData.sort((a, b) => b.score - a.score);
