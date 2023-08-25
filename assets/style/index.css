@@ -423,3 +423,7 @@ border-left: 1px solid var(--hover-color);
 	color: var(--secondary-color);
 	background: none;
 }
+i{
+	font-size: 60px;
+	margin: 30px;
+}
